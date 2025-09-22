@@ -44,3 +44,67 @@ Para cumplir con el apartado de accesibilidad, se hizo un proceso iterativo sobr
 - Mensajes de error con role="alert"
 - Toasts accesibles con aria-live
 - Navegación completa solo con teclado
+
+## Instrucciones de Instalación y Ejecución
+
+### Instalación
+
+1. **Clona el repositorio:**
+```bash
+git clone [URL_DEL_REPOSITORIO]
+cd gestion-autores
+```
+
+2. **Instala las dependencias:**
+```bash
+npm install
+# o
+yarn install
+# o
+pnpm install
+```
+
+### Configuración de la API
+
+1. **Configura la URL de la API** en tu archivo de configuración:
+```bash
+# .env.local (crear si no existe)
+NEXT_PUBLIC_API_BASE_URL=http://127.0.0.1:8080
+```
+Esa ip es la que corresponde con el backend que se dio en la ejecucion del preparcial, es decir, es la direccion en la que el backend se ejecuta por defecto.
+
+2. **Asegúrate de que el API esté corriendo** en el puerto configurado con los endpoints:
+- `GET /authors` - Listar autores
+- `GET /authors/:id` - Obtener autor por ID  
+- `POST /authors` - Crear autor
+- `PUT /authors/:id` - Actualizar autor
+- `DELETE /authors/:id` - Eliminar autor
+
+### Ejecución
+
+#### Modo Desarrollo:
+```bash
+npm run dev
+# o
+yarn dev
+# o
+pnpm dev
+```
+
+La aplicación estará disponible en: **http://localhost:3000**
+
+### Funcionalidades Principales
+
+#### Navegación:
+- **`/`** - Página principal con listado de todos los autores
+- **`/favoritos`** - Página de autores favoritos (Ojo, durante la ejecucion del parcial, se especifico que no debe ser persistence, por lo tanto, si se actualiza la pagina los favoritos se pierden).
+- **`/authors/new`** - Formulario para crear nuevo autor
+- **`/authors/[id]`** - Página de detalle del autor
+- **`/authors/[id]/edit`** - Formulario para editar autor
+
+### Tecnologías Utilizadas
+- **Next.js 14** (App Router)
+- **TypeScript**
+- **Tailwind CSS**
+- **React Hot Toast**
+- **Lucide React** (iconos)
