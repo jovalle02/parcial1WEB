@@ -71,7 +71,7 @@ pnpm install
 # .env.local (crear si no existe)
 NEXT_PUBLIC_API_BASE_URL=http://127.0.0.1:8080
 ```
-Esa ip es la que corresponde con el backend que se dio en la ejecucion del preparcial, es decir, es la direccion en la que el backend se ejecuta por defecto.
+Esta ip (http://127.0.0.1:8080) es la que corresponde con el backend dado para la ejecucion del preparcial, es decir, es la direccion en la que el backend se ejecuta por defecto.
 
 2. **Asegúrate de que el API esté corriendo** en el puerto configurado con los endpoints:
 - `GET /authors` - Listar autores
