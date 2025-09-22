@@ -10,6 +10,8 @@ El sistema utiliza **Tailwind CSS** para el diseño responsivo y **react-hot-toa
 
 **Opción seleccionada:** Accesibilidad
 
+Para cumplir con el apartado de accesibilidad, se hizo un proceso iterativo sobre cada una de las rutas con el fin de modificar todos los componentes necesarios para asegurar la accesibilidad completa de la aplicacion. Por ejemplo, en todas las paginas se encuentran props "aria" para mejorar la accesibilidad, tambien se anadieron ids y efectos visuales que le permiten al usuario recibir feedback sobre sus interacciones (mensajes de error, mensajes de confirmacion, etc.)
+
 ### Características Implementadas:
 
 #### 1. Navegación con teclado
