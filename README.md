@@ -97,7 +97,7 @@ La aplicación estará disponible en: **http://localhost:3000**
 
 #### Navegación:
 - **`/`** - Página principal con listado de todos los autores
-- **`/favoritos`** - Página de autores favoritos (Ojo, durante la ejecucion del parcial, se especifico que no debe ser persistence, por lo tanto, si se actualiza la pagina los favoritos se pierden).
+- **`/favoritos`** - Página de autores favoritos (Ojo, durante la ejecucion del parcial, se especifico que no debe ser persistente, por lo tanto, si se actualiza la pagina los favoritos se pierden).
 - **`/authors/new`** - Formulario para crear nuevo autor
 - **`/authors/[id]`** - Página de detalle del autor
 - **`/authors/[id]/edit`** - Formulario para editar autor
