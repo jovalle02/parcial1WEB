@@ -1,36 +1,44 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Gestión de Autores - CRUD Application
 
-## Getting Started
+## Arquitectura de la Solución
 
-First, run the development server:
+Esta aplicación implementa un sistema CRUD completo para la gestión de autores utilizando **Next.js 14** con **App Router** y **TypeScript**. La arquitectura sigue un patrón de componentes modulares donde cada funcionalidad está encapsulada en hooks personalizados (`useAuthors`) que manejan las operaciones de API, mientras que el estado global de favoritos se gestiona mediante **React Context**. Los componentes están diseñados siguiendo principios de accesibilidad web y reutilización, con una separación clara entre lógica de negocio, estado de la aplicación y presentación.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+El sistema utiliza **Tailwind CSS** para el diseño responsivo y **react-hot-toast** para notificaciones accesibles. La aplicación se estructura en páginas principales (listado, creación, edición y detalle de autores) con componentes compartidos como `AuthorCard`, implementando navegación fluida y gestión de estados de carga y error de forma consistente en toda la aplicación.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Parte B Desarrollada: Accesibilidad
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+**Opción seleccionada:** Accesibilidad
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### Características Implementadas:
 
-## Learn More
+#### 1. Navegación con teclado
+- **Tabulación ordenada** en todos los formularios y elementos interactivos
+- **Focus visible** con anillos de enfoque personalizados en botones, enlaces y campos
+- **Soporte completo de teclado** (Enter y Espacio) en botones personalizados
 
-To learn more about Next.js, take a look at the following resources:
+#### 2. Atributos ARIA en formularios
+- **`aria-label`** y **`aria-labelledby`** para describir acciones específicas
+- **`aria-invalid`** y **`aria-describedby`** para campos con errores
+- **`fieldset`** y **`legend`** para agrupación semántica de formularios
+- **Referencias explícitas** entre labels e inputs con `htmlFor` e `id`
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+#### 3. Comportamiento accesible en cambios de estado
+- **`aria-pressed="true/false"`** en botón de favoritos
+- **`role="alert"`** para errores críticos
+- **`role="status"`** para confirmaciones y cambios no críticos
+- **`aria-live`** con valores apropiados (polite/assertive)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### Cómo Validar la Accesibilidad:
 
-## Deploy on Vercel
+#### Validación Manual:
+1. **Navegación por teclado:** Usa solo la tecla Tab para navegar por toda la aplicación
+2. **Lectores de pantalla:** Se puede revisar la accesibilidad de la aplicacion mediante un lector de pantalla.
+3. **Focus visible:** Verifica que todos los elementos interactivos muestren un indicador de foco claro
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+#### Elementos Específicos a Probar:
+- Formularios de creación y edición de autores
+- Botón de favoritos con estados aria-pressed
+- Mensajes de error con role="alert"
+- Toasts accesibles con aria-live
+- Navegación completa solo con teclado
